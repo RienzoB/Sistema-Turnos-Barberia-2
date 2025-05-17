@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Agendar un Turno</h2>
+<form method="post">
+  <label>Nombre:</label>
+  <input type="text" name="nombre" required>
+  <label>Email:</label>
+  <input type="email" name="email" required>
+  <label>Servicio:</label>
+  <select name="servicio">
+    <option value="Corte">Corte</option>
+    <option value="Corte + Barba">Corte + Barba</option>
+  </select>
+  <label>Fecha y hora:</label>
+  <input type="datetime-local" name="fecha_hora" required>
+  <button type="submit">Reservar</button>
+</form>
+{% endblock %}
