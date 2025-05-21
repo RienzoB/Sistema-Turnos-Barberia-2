@@ -1,18 +1,36 @@
 {% extends "base.html" %}
 {% block content %}
-<h2>Agendar un Turno</h2>
-<form method="post">
-  <label>Nombre:</label>
-  <input type="text" name="nombre" required>
-  <label>Email:</label>
-  <input type="email" name="email" required>
-  <label>Servicio:</label>
-  <select name="servicio">
-    <option value="Corte">Corte</option>
-    <option value="Corte + Barba">Corte + Barba</option>
-  </select>
-  <label>Fecha y hora:</label>
-  <input type="datetime-local" name="fecha_hora" required>
-  <button type="submit">Reservar</button>
-</form>
+<div class="card p-4 mx-auto" style="max-width: 500px;">
+  <h3 class="card-title text-center">Agendar un Turno</h3>
+  <form id="form-agendar" method="post">
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input type="text" name="nombre" id="nombre" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" name="email" id="email" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label for="servicio" class="form-label">Servicio</label>
+      <select name="servicio" id="servicio" class="form-select" required>
+        <option value="Corte">Corte (30 min)</option>
+        <option value="Corte + Barba">Corte + Barba (40 min)</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="fecha" class="form-label">Fecha</label>
+      <input type="text" id="fecha" class="form-control" placeholder="Elegí una fecha" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Horarios disponibles</label>
+      <div id="lista-horarios" class="d-flex flex-wrap gap-2">
+        <!-- Aquí irán botones de hora -->
+        <small class="text-muted">Seleccioná fecha y servicio para ver horarios</small>
+      </div>
+      <input type="hidden" name="fecha_hora" id="fecha_hora">
+    </div>
+    <button type="submit" class="btn btn-primary w-100">Reservar</button>
+  </form>
+</div>
 {% endblock %}

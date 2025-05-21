@@ -1,7 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin
-from datetime import datetime, timedelta, time
-
+from datetime import datetime, timedelta
 
 db = SQLAlchemy()
 
@@ -18,10 +17,9 @@ class Appointment(db.Model):
     start = db.Column(db.DateTime, nullable=False)
     end = db.Column(db.DateTime, nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
-
     @staticmethod
     def duration_for(service):
-        return timedelta(minutes=30 if service == 'Corte' else 40)
+        return timedelta(minutes=30 if service=='Corte' else 40)
 
 class Product(db.Model):
     id = db.Column(db.Integer, primary_key=True)
