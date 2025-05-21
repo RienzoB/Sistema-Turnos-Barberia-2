@@ -1,0 +1,271 @@
+/* Actualización de styles.css */
+
+/* Fuente y configuración general */
+/* Bootstrap util classes cargadas en base.html */
+
+/* Override fondo semitransparente para el calendario */
+.flatpickr-calendar {
+  background-color: #fff;
+  border-radius: .5rem;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+}
+
+/* Contacto fijo al pie de main */
+.contact-info {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  color: #495057;
+  text-decoration: none;
+}
+.contact-item:hover {
+  color: #0d6efd;
+}
+.whatsapp-icon { font-size: 1.5rem; color: #25D366; }
+.address-icon { font-size: 1.5rem; color: #dc3545; }
+
+/* Tabla admin más visible */
+.admin-table th td{
+  background-color: #f8f9fa;
+}
+
+/* Flash position */
+.flash-alert {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1050;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url('/static/logo.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+ 
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+header {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  text-align: center;
+  padding: 20px 10px;
+}
+.logo {
+  max-width: 150px;
+  display: block;
+  margin: 0 auto 10px;
+}
+header h1 {
+  margin: 0;
+  font-size: 2em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+main {
+  padding: 20px;
+}
+
+.booking {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(235, 231, 231, 0.95);
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 400px;
+  margin: 40px auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.booking form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.booking input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+nav { background:#444; padding:.5rem; text-align:center; }
+nav a { color:#fff; margin:0 .75rem; text-decoration:none; font-weight:bold; }
+nav a:hover { text-decoration:underline; }
+main {
+  padding: 20px;
+}
+
+button {
+    position: relative;
+    padding: 15px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #420909;
+    background-color: #eceaea;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    margin-top: 10px;
+    align-self: center;
+    width: 100;
+    z-index: 2; 
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        45deg,
+        white,
+        white 10px,
+        red 10px,
+        red 20px,
+        blue 20px,
+        blue 30px
+    );
+    animation: slide 2s linear infinite;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+@keyframes slide {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(50%); }
+}
+
+button:hover {
+    background-color: #6e3131;
+    color: #f3f7f8;
+}
+button:active {
+    transform: scale(0.95);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+      margin: 20px 0;
+      z-index: 5;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #f9f9f9;
+      padding: 0.7rem 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #333;
+      transition: background 0.3s;
+    }
+    .contact-item:hover {
+      background: #e0e0e0;
+    }
+    .whatsapp-icon {
+      color: #25D366;
+    }
+    .address-icon {
+      color: #E74C3C;
+    }
+    
+
+.alert { padding:1rem; margin-bottom:1rem; border-radius:4px; }
+.alert-success { background:#d4edda; color:#155724; }
+.alert-danger { background:#f8d7da; color:#721c24; }
+form input, form select { width:100%; padding:.5rem; margin:.5rem 0; border:1px solid #ccc; border-radius:4px; }
+
+/* Bootstrap util classes cargadas en base.html */
+
+/* Flatpickr theme overrides */
+.flatpickr-calendar,
+.flatpickr-months,
+.flatpickr-weekdays,
+.flatpickr-days {
+  border: none;
+  background: #ffffff;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  border-radius: 0.5rem;
+}
+.flatpickr-day.selected,
+.flatpickr-day.today {
+  background: #0d6efd;
+  color: #fff;
+  border-radius: 0.3rem;
+}
+
+/* Contacto fijo al pie de main */
+.contact-info {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  color: #495057;
+  text-decoration: none;
+}
+.contact-item:hover {
+  color: #0d6efd;
+}
+.whatsapp-icon { font-size: 1.5rem; color: #25D366; }
+.address-icon { font-size: 1.5rem; color: #dc3545; }
+
+/* Tabla admin más visible con Bootstrap */
+.admin-table {
+  width: 100%;
+}
+.admin-table th {
+  background-color: #e9ecef;
+}
+.admin-table td,
+.admin-table th {
+  vertical-align: middle;
+}
+
+/* Flash position */
+.flash-alert {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1050;
+}
